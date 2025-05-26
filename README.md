@@ -39,12 +39,10 @@ $max_{\omega} L(\omega) = max_{\omega} \prod_{i=1}^{N} p(y^{(i)} | x^{(i)}; \ome
 
 We can convert the maximization problem into minimization so that we can write the loss function. This is the logistic regression loss function used in Scikit-Learn:
 
-\begin{align*}
-L_{\log}(\omega) &= -\log L(\omega) = - \sum_{i=1}^{N} \log p(y^{(i)} \mid x^{(i)}; \omega) \\
-&= - \sum_{i=1}^{N} y^{(i)} \log p(y=1 \mid x^{(i)}; \omega) 
-- \sum_{i=1}^{N} (1 - y^{(i)}) \log p(y=0 \mid x^{(i)}; \omega)
-\end{align*}
-
+L_log(ω) = -log L(ω)  
+     = - ∑ᵢ₌₁ⁿ log p(y⁽ⁱ⁾ | x⁽ⁱ⁾; ω)  
+     = - ∑ᵢ₌₁ⁿ [ y⁽ⁱ⁾ log p(y=1 | x⁽ⁱ⁾; ω) + (1 − y⁽ⁱ⁾) log p(y=0 | x⁽ⁱ⁾; ω) ]
+     
 The negative log-likelihood quantifies how well the model's predicted  probabilities align with the actual labels.
 
 **Results:**
