@@ -39,15 +39,17 @@ $max_{\omega} L(\omega) = max_{\omega} \prod_{i=1}^{N} p(y^{(i)} | x^{(i)}; \ome
 
 We can convert the maximization problem into minimization so that we can write the loss function. This is the logistic regression loss function used in Scikit-Learn:
 
-$L_{log}(\omega) = -logL(\omega) = - \sum_{i=1}^{N} log p(y^{(i)} | x^{(i)}; \omega)\\
-
-= - \sum_{i=1}^{N} y^{(i)} log(p(y=1 | x^{(i)}; \omega)) - \sum_{i=1}^{N} (1- y^{(i)}) log(p(y=0 | x^{(i)}; \omega))$
+\begin{align*}
+L_{\log}(\omega) &= -\log L(\omega) = - \sum_{i=1}^{N} \log p(y^{(i)} \mid x^{(i)}; \omega) \\
+&= - \sum_{i=1}^{N} y^{(i)} \log p(y=1 \mid x^{(i)}; \omega) 
+- \sum_{i=1}^{N} (1 - y^{(i)}) \log p(y=0 \mid x^{(i)}; \omega)
+\end{align*}
 
 The negative log-likelihood quantifies how well the model's predicted  probabilities align with the actual labels.
 
 **Results:**
 Our model achieved an accuracy of 92%, demonstrating its effectiveness in predicting match outcomes.
 
-apma_figure1
+![Figure 1](apma_figure1.png)
 
 The Markov Chain model, with its focus on service point winning percentages, produced varying results with an accuracy range between 1% and 7%, attributed to the model’s inherent limitations. However, we need to observe that the logistic regression model compared the matches, and the result means that 92% of the matches are predicted correctly, while the markov model predicted the whole tournament (127 matches), so it is obvious that its accuracy will be very low compared to logistic regression model. Yet, the Markov model simplifies the complex dynamics of tennis by relying on the assumption of independence and memorylessness and fails to incorporate a multitude of influential factors like player psychology, in-game strategy adjustments, and external conditions, but logistic regression’s strength lies in its ability to incorporate multiple variables, each with an associated coefficient that directly impacts the prediction outcome. Its higher accuracy indicates a more nuanced understanding of the match dynamics, considering a wider array of factors that influence a player's performance.
